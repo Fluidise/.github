@@ -23,7 +23,7 @@ Modern software development increasingly relies on autonomous AI coding agents, 
 
 ### Available Now
 
-* **[`fluidise-clint`](https://github.com/Fluidise/lint)** — *Standalone, deterministic commit-message validation.*
+* **[`fluidise-clint`](https://github.com/Fluidise/clint)** — *Standalone, deterministic commit-message validation.*
   * **Agent-First Schema**: Emits versioned, machine-readable JSON (`schema_version: 1`) by default on `stdout` with precise diagnostic spans. Human-readable text formatting is available via `--format text`.
   * **Conventional Commits**: Enforces Conventional Commits 1.0.0 with project-configurable rules via `fluidise.toml`.
   * **Strict Non-Mutation**: Never alters repository files, installs unannounced hooks, or runs network calls.
@@ -69,7 +69,7 @@ Every tool in the Fluidise suite adheres to four invariants:
 
 | Repository | Purpose | Status |
 | --- | --- | --- |
-| [**`Fluidise/lint`**](https://github.com/Fluidise/lint) | Standalone commit-message linter (CLI & Rust crate) | **Active (v0.1.0)** |
+| [**`Fluidise/clint`**](https://github.com/Fluidise/clint) | Standalone commit-message linter (CLI & Rust crate) | **Active (v0.1.0)** |
 | [**`Fluidise/homebrew-tap`**](https://github.com/Fluidise/homebrew-tap) | Official Homebrew installation tap for macOS | **Active** |
 | [**`Fluidise/core`**](https://github.com/Fluidise/core) | Shared foundation, product contracts, and brand identity | **Active** |
 
@@ -80,4 +80,4 @@ Every tool in the Fluidise suite adheres to four invariants:
 Fluidise is developed as open source software for maintainers and automated environments. 
 
 * All project specifications and public documentation are maintained in English.
-* Core tools and distribution packages are licensed under the [MIT License](https://github.com/Fluidise/lint/blob/main/LICENSE).
+* Core tools and distribution packages are licensed under the [MIT License](https://github.com/Fluidise/clint/blob/main/LICENSE).
