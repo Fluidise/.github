@@ -23,7 +23,7 @@ Modern software development increasingly relies on autonomous AI coding agents, 
 
 ### Available Now
 
-* **[`fluidise-lint`](https://github.com/Fluidise/lint)** — *Standalone, deterministic commit-message validation.*
+* **[`fluidise-clint`](https://github.com/Fluidise/lint)** — *Standalone, deterministic commit-message validation.*
   * **Agent-First Schema**: Emits versioned, machine-readable JSON (`schema_version: 1`) by default on `stdout` with precise diagnostic spans. Human-readable text formatting is available via `--format text`.
   * **Conventional Commits**: Enforces Conventional Commits 1.0.0 with project-configurable rules via `fluidise.toml`.
   * **Strict Non-Mutation**: Never alters repository files, installs unannounced hooks, or runs network calls.
@@ -31,7 +31,7 @@ Modern software development increasingly relies on autonomous AI coding agents, 
   * **Installation**: Available via the official Homebrew tap:
     ```sh
     brew tap Fluidise/homebrew-tap
-    brew install fluidise-lint
+    brew install fluidise-clint
     ```
 
 ---
