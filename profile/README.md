@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Fluidise/core/main/assets/brand/logo-white.svg">
-    <img src="https://raw.githubusercontent.com/Fluidise/core/main/assets/brand/logo.svg" alt="Fluidise logo" width="128" height="128">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Fluidise/.github/main/profile/assets/brand/logo-white.svg">
+    <img src="https://raw.githubusercontent.com/Fluidise/.github/main/profile/assets/brand/logo.svg" alt="Fluidise logo" width="128" height="128">
   </picture>
 </p>
 
