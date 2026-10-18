@@ -1,8 +1,5 @@
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Fluidise/.github/main/profile/assets/brand/logo-white.svg">
-    <img src="https://raw.githubusercontent.com/Fluidise/.github/main/profile/assets/brand/logo.svg" alt="Fluidise logo" width="128" height="128">
-  </picture>
+  <img src="./assets/brand/banner-v2.png" alt="Fluidise logo and FLUIDISE wordmark over a painterly mineral valley with a winding river reflecting warm dawn light" width="100%">
 </p>
 
 <h1 align="center">Fluidise</h1>
