@@ -1,1 +1,16 @@
+# Operating System
 .DS_Store
+Thumbs.db
+
+# Git Worktrees
+.worktrees/
+
+# Local environment & scratch
+*.local
+.env*.local
+
+# Editor directories & temporary files
+.idea/
+*.swp
+*.swo
+*~
