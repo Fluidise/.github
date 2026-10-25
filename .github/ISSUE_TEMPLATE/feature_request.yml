@@ -1,0 +1,57 @@
+name: Feature Request / Capability Proposal
+description: Propose a new capability, tool, or architectural enhancement for Fluidise
+title: "[Feat]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Fluidise Invariants Reminder
+        Fluidise tools are designed for autonomous AI agents and automated workflows:
+        1. **Agent-First & Deterministic** (stable schemas, predictable exit codes).
+        2. **Zero Runtime Dependencies** (standalone precompiled binaries, no node/python runtimes needed).
+        3. **Strict Safety & Isolation** (no unannounced side-effects or network calls).
+        4. **Standalone Modularity** (every tool is an autonomous building block).
+  - type: dropdown
+    id: target
+    attributes:
+      label: Target Component
+      description: Which area or tool does this proposal address?
+      options:
+        - "Fluidise/clint (Commit message validation)"
+        - "Git Hook Manager (Future scoped tool)"
+        - "CI & Server-Side Enforcement"
+        - "Shared Foundation (fluidise.toml specification)"
+        - "New Standalone Tool Proposal"
+        - "General / Documentation"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: What challenge, inefficiency, or friction does this feature solve?
+      placeholder: "When running automated agent workflows, ..."
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed Solution & Interface
+      description: Describe the proposed interface, command-line arguments, JSON output schema, or behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: What other solutions or existing tools were evaluated, and why are they insufficient?
+  - type: checkboxes
+    id: invariant_alignment
+    attributes:
+      label: Invariant Alignment
+      options:
+        - label: The proposal respects the "Zero Runtime Dependencies" invariant.
+          required: true
+        - label: The proposal provides deterministic machine-readable outputs for agent workflows.
+          required: true
