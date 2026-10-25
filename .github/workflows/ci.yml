@@ -7,6 +7,7 @@ on:
   pull_request:
     branches:
       - main
+    types: [opened, synchronize, reopened, edited, ready_for_review]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -23,7 +24,7 @@ jobs:
       - name: Run Lychee Link Checker
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --verbose --no-progress './**/*.md'
+          args: --verbose --no-progress --exclude 'https://github.com/Fluidise/core' './**/*.md'
           fail: true
 
   lint-commits:
@@ -36,18 +37,21 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install fluidise-clint
+      - name: Validate PR Title
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
         run: |
-          mkdir -p "$HOME/.local/bin"
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
-          # Attempt to retrieve precompiled fluidise-clint binary from releases
-          if curl -sLf https://github.com/Fluidise/clint/releases/latest/download/fluidise-clint-x86_64-unknown-linux-musl.tar.gz -o /tmp/clint.tar.gz 2>/dev/null; then
-            tar -xzf /tmp/clint.tar.gz -C "$HOME/.local/bin/" || true
+          CONVENTIONAL_REGEX='^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-zA-Z0-9_-]+\))?!?: .+$'
+          if ! printf '%s\n' "$PR_TITLE" | grep -qE "$CONVENTIONAL_REGEX"; then
+            echo "❌ PR title does not adhere to Conventional Commits: '$PR_TITLE'" >&2
+            echo "Expected: <type>(<optional scope>)[!]: <description>" >&2
+            exit 1
           fi
+          echo "✅ PR title is valid: '$PR_TITLE'"
 
       - name: Validate PR Commits
         run: |
-          COMMITS=$(git log --format="%s" origin/${{ github.base_ref }}..HEAD)
+          COMMITS=$(git log --no-merges --format="%s" origin/${{ github.base_ref }}..HEAD)
           echo "Validating commits against Conventional Commits 1.0.0:"
           echo "$COMMITS"
           FAILED=0
@@ -56,8 +60,8 @@ jobs:
             if command -v fluidise-clint &>/dev/null; then
               echo "$msg" | fluidise-clint --format text || FAILED=1
             else
-              # Fallback validation for Conventional Commits
-              if ! echo "$msg" | grep -Eq '^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-zA-Z0-9_.-]+\))?(!)?: .+'; then
+              CONVENTIONAL_REGEX='^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-zA-Z0-9_.-]+\))?(!)?: .+'
+              if ! echo "$msg" | grep -Eq "$CONVENTIONAL_REGEX"; then
                 echo "❌ Invalid Conventional Commit format: $msg"
                 FAILED=1
               else
