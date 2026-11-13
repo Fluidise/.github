@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/brand/banner-v2.png" alt="Fluidise logo and FLUIDISE wordmark over a painterly mineral valley with a winding river reflecting warm dawn light" width="100%">
+  <img src="./assets/brand/banner-v3.png" alt="Fluidise logo and FLUIDISE wordmark over a softly painted mineral-blue valley with a winding river beneath an apricot dawn sky" width="100%">
 </p>
 
 <h1 align="center">Fluidise</h1>

@@ -1,0 +1,80 @@
+{
+  "status": "Proposed for the organization profile README; pending user visual review.",
+  "created_on": "2026-11-13",
+  "purpose": "Fluidise GitHub organization profile README banner",
+  "dimensions": {
+    "width": 2048,
+    "height": 768,
+    "aspect_ratio": "8:3"
+  },
+  "direction": "Simplified painterly mineral-blue valley and flowing river, muted blue-green terraces, soft apricot dawn.",
+  "art_direction_source": "Fluidise/core:docs/brand.md#landscape-art-direction",
+  "generation": {
+    "tool": "Built-in image_gen tool",
+    "mode": "Style-transfer background with separately composed official branding",
+    "generated_file": "exec-9af720f4-2662-47cd-a8c7-293cb3186cd1.png",
+    "background": "banner-v3-background.png",
+    "background_sha256": "3651c3caffa2ea6db89256d6cdd4a6831fe70b58745b7d434d53f61139345119",
+    "prompt": "Use case: style-transfer.\nAsset type: production background illustration for the Fluidise GitHub organization profile banner. Wide panoramic 8:3 image, target 2048 × 768 pixels, opaque, edge-to-edge.\nInput images in order:\n1. Existing Fluidise organization banner: edit target for setting, dominant palette and visual identity only. Reimagine this mineral-blue valley and winding river at soft apricot dawn in the new simplified painterly family. REMOVE all text and bracket-face logo. Official branding will be composited separately. Do not preserve the old image's dense rocks and elaborate surface detail.\n2. Approved Relay background: primary rendering reference for broad soft painted landforms, restrained brush texture, large readable atmospheric layers and quiet generous space. Do not copy its islands, ocean or green-dominant palette.\n3. Approved Core background: supporting reference for calm simplified silhouettes, atmospheric depth and airy monumental scale. Do not copy its crescent, celestial setting or burgundy palette.\n\nPrimary request: a contemplative mineral valley, with a graceful continuous river leading through a few spacious blue-slate and muted mineral-green terraces toward an open luminous apricot horizon, slightly right of center. A strong Flow motif, not a collage. Familiar identity of the Fluidise organization, newly painted with far fewer, broader, softer forms. Grandeur from scale, spacing and light, not accumulated peaks or details.\nComposition: design natively for this very wide shallow banner. Four legible depth planes: quiet deep blue-slate foreground terrace in the lower left; a few broad mineral-blue middle-distance ridges framing the river; pale blue atmospheric distance; a generous open peach-cream and muted blue sky. The river is a simple broad light passage, not a collection of whitewater threads. Preserve a naturally darker uncluttered lower-left branding area approximately x=60..650, y=550..715. No artificial rectangle, gradient panel or heavy vignette. Spacious and balanced, one dominant passage. The brightest opening and river should remain clear at small display sizes.\nStyle: distinctly painted/drawn, broad coherent matte color masses, restrained directional digital brushwork, softly simplified silhouettes, a few intentional irregularities. Match the simplified treatment of references 2 and 3, not the old target's dense detail. Softness must not erase necessary foreground/middle-distance/horizon value separation.\nPalette: organization-specific mineral blue, slate, muted blue-green and restrained apricot/cream dawn light. Neither Relay emerald/ocean-green dominance nor Core red/burgundy. Bright airy distance with a naturally deeper blue foreground for later white branding.\nConstraints: background artwork ONLY. No text, letters, logo, brackets, symbols, watermark, frame, border, panels or UI. No planet, moon, stars, floating islands, buildings, technology, people, animals or trees. No photorealism, photographic surface noise, hyper-detailed rocks, dense peaks, elaborate relief, thick impasto, 3D render, HDR, over-sharpening, excessive waterfalls or clutter. Do not redraw branding.",
+    "references": [
+      {
+        "role": "Existing organization setting and palette; not rendering density",
+        "source": "Fluidise/.github/profile/assets/brand/banner-v2.png",
+        "sha256": "e5c044a8481ee7b167cc1d31a1b1b30be3da5a6731de73d542a4c4b27f26947b"
+      },
+      {
+        "role": "Primary approved simplified painterly rendering",
+        "source": "Fluidise/relay/docs/assets/banner-v2-background.png",
+        "sha256": "a35378dcd05159f5139f859db321241df900d812c32a9a9f768458f910556b1b"
+      },
+      {
+        "role": "Supporting calm painted atmosphere and simplified landforms",
+        "source": "Fluidise/core/assets/brand/banner-v2-background.png",
+        "sha256": "7fa0f3707ccd71e43edb0bd513f72d42f2d547727b246b7aad7962c409cf38cc"
+      }
+    ]
+  },
+  "branding": {
+    "method": "Separate deterministic overlays using existing local Sharp 0.35.5; no generated logo or lettering.",
+    "logo": {
+      "source": "logo-white.svg",
+      "sha256": "408cf002c6d8cb7c726fb6d4e92429d3394b750fdd69a807fa5296195bc870aa",
+      "left": 64,
+      "top": 576,
+      "width": 128,
+      "height": 128,
+      "geometry": "Official unchanged W1/B, original full square viewBox and proportions"
+    },
+    "text": {
+      "content": "FLUIDISE",
+      "font": "Arial 64",
+      "fontfile_name": "Arial.ttf",
+      "fontfile_sha256": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+      "color": "#ffffff",
+      "letter_spacing_pango_units": 4096,
+      "dpi": 72,
+      "left": 224,
+      "top": 616,
+      "width": 309,
+      "height": 48
+    }
+  },
+  "output": {
+    "file": "banner-v3.png",
+    "sha256": "276b661b67b28f2a7140fd9530845ea5b90e7cbb3275b16d7becf82adf1fe286"
+  },
+  "verification": {
+    "dimensions": "2048x768 PNG; opaque",
+    "source_copy": "Background copied byte-for-byte from built-in generation",
+    "background_pixels_changed_outside_branding_rectangles": 0,
+    "minimum_white_branding_contrast_on_background": 9.43,
+    "contrast_scope": "Background beneath branding pixels with alpha >= 250/255; not a full accessibility conformance audit",
+    "checked_branding_pixels": 7616,
+    "previous_banner_preserved": {
+      "file": "banner-v2.png",
+      "sha256": "e5c044a8481ee7b167cc1d31a1b1b30be3da5a6731de73d542a4c4b27f26947b"
+    },
+    "font_configured_rerender": "Exact pixel match with explicit Fontconfig configuration and Arial font file.",
+    "visual_review": "Reviewed full size and proportional 1012px and 375px previews; no branding clipping, calm painted depth and legible wordmark. Not live GitHub or physical-device testing."
+  }
+}
